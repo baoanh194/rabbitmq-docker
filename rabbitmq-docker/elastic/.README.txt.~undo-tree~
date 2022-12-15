@@ -1,5 +1,5 @@
 (undo-tree-save-format-version . 1)
-"417876e2de060fc8d53193ef57e45c9d8af2e198"
+"d8afe875d218cfbb538ddd79b73e84a93782757f"
 [nil nil nil nil (25498 54565 273278 0) 0 nil]
 ([nil nil ((1 . 11) (t . -1)) nil (25498 54565 273277 0) 0 nil])
 ([nil nil ((" " . -9) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (":" . -10) (undo-tree-id2 . -1) (undo-tree-id3 . -1) 11) nil (25498 54565 273276 0) 0 nil])
@@ -25,5 +25,89 @@
 ([nil nil ((195 . 255)) nil (25498 54677 108518 0) 0 nil])
 ([nil nil ((255 . 256)) nil (25498 54677 108517 0) 0 nil])
 ([nil nil ((256 . 472)) nil (25498 54677 108516 0) 0 nil])
-([nil current ((472 . 473)) nil (25498 54677 108513 0) 0 nil])
+([nil nil ((472 . 473)) nil (25498 54677 108513 0) 0 nil])
+([nil nil (("Refer to: https://www.elastic.co/guide/en/kibana/current/docker.html
+Github: https://github.com/elastic/dockerfiles/tree/8.5/kibana
+Published Docker images and tags:  www.docker.elastic.co
+
+
+1. Start an Elasticsearch container for development or testing:
+docker network create elastic
+docker pull docker.elastic.co/elasticsearch/elasticsearch:8.5.3
+docker run --name es-node01 --net elastic -p 9200:9200 -p 9300:9300 -t docker.elastic.co/elasticsearch/elasticsearch:8.5.3
+" . 1) (undo-tree-id9 . -69) (undo-tree-id10 . -472) (undo-tree-id11 . -191) (undo-tree-id12 . -191) (undo-tree-id13 . -472) (t 25498 56397 818872 760000)) nil (25498 57828 478492 0) 0 nil])
+([nil nil ((1 . 3668)) nil (25498 57828 478487 0) 0 nil])
+([nil nil (("Refer to: https://www.elastic.co/guide/en/kibana/current/docker.html
+Github: https://github.com/elastic/dockerfiles/tree/8.5/kibana
+Published Docker images and tags:  www.docker.elastic.co
+
+--------------------------------------------------------------------------------
+Installl Kibana with Docker
+--------------------------------------------------------------------------------
+
+1. Start an Elasticsearch container for development or testing:
+docker network create elastic
+docker pull docker.elastic.co/elasticsearch/elasticsearch:8.5.3
+docker run --name es-node01 --net elastic -p 9200:9200 -p 9300:9300 -t docker.elastic.co/elasticsearch/elasticsearch:8.5.3
+
+
+* Result:
+✅ Elasticsearch security features have been automatically configured!
+✅ Authentication is enabled and cluster connections are encrypted.
+
+-️  Password for the elastic user (reset with `bin/elasticsearch-reset-password -u elastic`):
+  FZb-mZavRh+aY2RWweu0
+
+-️  HTTP CA certificate SHA-256 fingerprint:
+  a80039bb79e3f4f0e2b4d08b3ba50bd9602a43b7d583e7bb8a26d353a83c5041
+
+-️  Configure Kibana to use this cluster:
+• Run Kibana and click the configuration link in the terminal when Kibana starts.
+• Copy the following enrollment token and paste it into Kibana in your browser (valid for the next 30 minutes):
+  eyJ2ZXIiOiI4LjUuMyIsImFkciI6WyIxOTIuMTY4LjE3Ni4yOjkyMDAiXSwiZmdyIjoiYTgwMDM5YmI3OWUzZjRmMGUyYjRkMDhiM2JhNTBiZDk2MDJhNDNiN2Q1ODNlN2JiOGEyNmQzNTNhODNjNTA0MSIsImtleSI6Ik94elVGSVVCRmdtSXlIdU5qc3RMOkI0cWRYV3RlUWNTd0JqU0RaQktxVWcifQ==
+
+-️ Configure other nodes to join this cluster:
+• Copy the following enrollment token and start new Elasticsearch nodes with `bin/elasticsearch --enrollment-token <token>` (valid for the next 30 minutes):
+  eyJ2ZXIiOiI4LjUuMyIsImFkciI6WyIxOTIuMTY4LjE3Ni4yOjkyMDAiXSwiZmdyIjoiYTgwMDM5YmI3OWUzZjRmMGUyYjRkMDhiM2JhNTBiZDk2MDJhNDNiN2Q1ODNlN2JiOGEyNmQzNTNhODNjNTA0MSIsImtleSI6Ik9oelVGSVVCRmdtSXlIdU5qc3RJOncxYS01bWY0U3hPTzFuQVowQklYVEEifQ==
+
+  If you're running in Docker, copy the enrollment token and run:
+  `docker run -e \"ENROLLMENT_TOKEN=<token>\" docker.elastic.co/elasticsearch/elasticsearch:8.5.3`
+
+2. In a new terminal session, start Kibana and connect it to your Elasticsearch container:
+docker pull docker.elastic.co/kibana/kibana:8.5.3
+docker run --name kib-01 --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:8.5.3
+
+When you start Kibana, a unique link is output to your terminal.
+
+3. To access Kibana, click the generated link in your terminal.
+
+In your browser, paste the enrollment token that you copied when starting Elasticsearch and click the button to connect your Kibana instance with Elasticsearch.
+Log in to Kibana as the elastic user with the password that was generated when you started Elasticsearch.
+
+--------------------------------------------------------------------------------
+Generate password and enrollment token
+--------------------------------------------------------------------------------
+1. To reset the password for the elastic user:
+
+docker exec -it es-node01 /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
+
+2. To generate an enrollment token:
+
+docker exec -it es-node01 /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
+
+--------------------------------------------------------------------------------
+Remove docker container
+--------------------------------------------------------------------------------
+docker network rm elastic
+docker rm es-node01
+docker rm kib-01
+
+--------------------------------------------------------------------------------
+Configure Kibana on Docker
+--------------------------------------------------------------------------------
+" . 1) (undo-tree-id0 . -3667) (undo-tree-id1 . -3667) (undo-tree-id2 . -3667) (undo-tree-id3 . -3667) (undo-tree-id4 . -3667) (undo-tree-id5 . -69) (undo-tree-id6 . -3667) (undo-tree-id7 . -3667) (undo-tree-id8 . -3667) 3668) nil (25498 57828 478485 0) 0 nil])
+([nil nil ((1 . 5045)) nil (25498 57828 478465 0) 0 nil])
+([nil current ((4990 . 5002) ("
+
+monitoring" . 4990) (t 25498 57828 481975 352000)) nil (25498 57833 313656 0) 0 nil])
 nil
