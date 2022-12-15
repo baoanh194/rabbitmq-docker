@@ -1,4 +1,3 @@
-Refer to: https://www.elastic.co/guide/en/kibana/current/docker.html
 Github: https://github.com/elastic/dockerfiles/tree/8.5/kibana
 Published Docker images and tags:  www.docker.elastic.co
 
@@ -111,3 +110,7 @@ server.shutdownTimeout = "5s"
 elasticsearch.hosts = http://elasticsearch:9200
 
 Monitoring.ui.container.elasticsearch.enabled = true
+
+--------------------------------------------------------------------------------
+For other configurations, please refer to: Refer to: https://www.elastic.co/guide/en/kibana/current/docker.html
+--------------------------------------------------------------------------------
